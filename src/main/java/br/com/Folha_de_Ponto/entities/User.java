@@ -15,6 +15,13 @@ import org.hibernate.annotations.GenericGenerator;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name="user")
 public class User {
 	
@@ -42,13 +49,14 @@ public class User {
 	@OneToMany(mappedBy="user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JsonManagedReference
 	private List<Point> listPoints;
-	
-	//Novo usuario usando o dto
-//	public User(String name, String email, String phone) {
-//	    this.name = name;
-//	    this.email = email;
-//	    this.phone = phone;
-//	}
+
+	public List<Point> getListPoints() {
+		return listPoints;
+	}
+
+	public void setListPoints(List<Point> listPoints) {
+		this.listPoints = listPoints;
+	}
 
 	public Long getIdUser() {
 		return idUser;
