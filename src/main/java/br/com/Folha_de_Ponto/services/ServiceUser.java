@@ -38,7 +38,7 @@ public class ServiceUser {
 		return (List<User>) repositoryUser.findAll();
 	}
 	
-	public List<User> readUserByEmail(String email){
+	public User readUserByEmail(String email){
 		return repositoryUser.findByEmail(email);
 	}
 	

@@ -24,10 +24,6 @@ public class Point {
 	@Column(name="idPoint")
 	private Long idPoint;
 	
-//	private LocalDateTime date_time_entrada;
-//	
-//	private LocalDateTime date_time_saida;
-	
 	@Column(name="date_time_registro")
 	@DateTimeFormat(pattern = "dd-MM-yyyy HH:mm")
 	private LocalDateTime date_time_registro;

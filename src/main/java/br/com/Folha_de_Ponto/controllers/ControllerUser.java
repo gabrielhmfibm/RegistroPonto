@@ -36,12 +36,11 @@ public class ControllerUser {
 	
 	@GetMapping("/{email}")
 	@ResponseBody
-	public List<User> readPeopleByName(@PathVariable(value= "email") String email) {
+	public User readPeopleByEmail(@PathVariable(value= "email") String email) {
 		return serviceUser.readUserByEmail(email);
-		
 	}
 	
-	@PostMapping("/user")
+	@PostMapping("/users")
 	@ResponseBody
 	public void insertUser(@RequestBody User user) {
 		serviceUser.insertUser(user);
@@ -53,7 +52,7 @@ public class ControllerUser {
 		serviceUser.deleteUserById(idUser);
 	}
 	
-	@PutMapping("/user")
+	@PutMapping("/users")
 	@ResponseBody
 	public void updatePeople(@RequestBody User user) {
 		serviceUser.updateUser(user);
